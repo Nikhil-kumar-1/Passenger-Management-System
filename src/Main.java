@@ -1,10 +1,12 @@
 package src;
 
-import src.ui.ConsoleUI;
+import src.ui.SwingUI;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleUI consoleUI = new ConsoleUI();
-        consoleUI.start();
+        // Run GUI on Event Dispatch Thread
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            new SwingUI();
+        });
     }
 }
